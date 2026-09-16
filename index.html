@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Ronav Jaiswal | Software Engineer &amp; AI Researcher</title>
+<meta name="description" content="Ronav Jaiswal is a Carnegie Mellon student building software systems, AI infrastructure, computer vision, and distributed systems."/>
+<meta name="theme-color" content="#11131b"/>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%2311131b'/%3E%3Cpath d='M17 45V19h17c8 0 13 4 13 11 0 5-3 9-8 10l9 5H36l-8-6v6H17zm11-15h6c2 0 3-1 3-3s-1-3-3-3h-6v6z' fill='%232563eb'/%3E%3C/svg%3E"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Using Geist and JetBrains Mono as specified -->
+<style>
+        @import url('https://fonts.googleapis.com/css2?family=Geist:wght@400;700&display=swap');
+        
+        body {
+            font-family: 'Geist', sans-serif;
+            background-color: #11131b;
+            color: #e1e2ed;
+            overflow-x: hidden;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .font-label-caps { font-family: 'JetBrains Mono', monospace; }
+        .font-code-sm { font-family: 'JetBrains Mono', monospace; }
+
+        /* Custom scrollbar for technical feel */
+        ::-webkit-scrollbar {
+            width: 4px;
+            height: 4px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #11131b;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #32343d;
+            border-radius: 2px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #2563eb;
+        }
+
+        .terminal-cursor {
+            display: inline-block;
+            width: 8px;
+            height: 18px;
+            background-color: #2563eb;
+            animation: blink 1s step-end infinite;
+            vertical-align: middle;
+            margin-left: 4px;
+        }
+
+        @keyframes blink {
+            50% { opacity: 0; }
+        }
+
+        .glass-nav {
+            background: rgba(17, 19, 27, 0.8);
+            backdrop-filter: blur(20px);
+        }
+
+        .stagger-reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .stagger-reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-low": "#191b23",
+                    "surface-container": "#1d1f27",
+                    "primary-container": "#2563eb",
+                    "on-surface-variant": "#c3c6d7",
+                    "background": "#11131b",
+                    "surface-dim": "#11131b",
+                    "primary": "#b4c5ff",
+                    "surface": "#11131b",
+                    "error-container": "#93000a",
+                    "secondary": "#c8c6c9",
+                    "primary-fixed": "#dbe1ff",
+                    "on-background": "#e1e2ed",
+                    "on-primary-fixed-variant": "#003ea8",
+                    "on-primary-fixed": "#00174b",
+                    "on-secondary-fixed": "#1b1b1e",
+                    "surface-variant": "#32343d",
+                    "outline-variant": "#434655",
+                    "on-secondary": "#303033",
+                    "on-primary": "#002a78",
+                    "on-secondary-container": "#b6b4b8",
+                    "surface-container-lowest": "#0c0e16",
+                    "inverse-surface": "#e1e2ed",
+                    "surface-tint": "#b4c5ff",
+                    "on-tertiary-fixed": "#360f00",
+                    "primary-fixed-dim": "#b4c5ff",
+                    "on-tertiary-fixed-variant": "#7d2d00",
+                    "surface-bright": "#373942",
+                    "inverse-primary": "#0053db",
+                    "surface-container-highest": "#32343d",
+                    "on-error": "#690005",
+                    "on-error-container": "#ffdad6",
+                    "error": "#ffb4ab",
+                    "secondary-container": "#47464a",
+                    "on-surface": "#e1e2ed",
+                    "tertiary": "#ffb596",
+                    "tertiary-container": "#bc4800",
+                    "inverse-on-surface": "#2e3039",
+                    "tertiary-fixed": "#ffdbcd",
+                    "on-tertiary": "#581e00",
+                    "tertiary-fixed-dim": "#ffb596",
+                    "on-primary-container": "#eeefff",
+                    "surface-container-high": "#282a32",
+                    "on-tertiary-container": "#ffede6",
+                    "outline": "#8d90a0",
+                    "secondary-fixed": "#e4e1e5",
+                    "secondary-fixed-dim": "#c8c6c9",
+                    "on-secondary-fixed-variant": "#47464a"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "stack-sm": "8px",
+                    "stack-md": "16px",
+                    "section-gap": "120px",
+                    "stack-lg": "32px",
+                    "gutter": "24px",
+                    "container-max": "1280px"
+            },
+            "fontFamily": {
+                    "display-lg-mobile": ["Geist"],
+                    "code-sm": ["JetBrains Mono"],
+                    "body-lg": ["Geist"],
+                    "display-lg": ["Geist"],
+                    "headline-md": ["Geist"],
+                    "body-sm": ["Geist"],
+                    "label-caps": ["JetBrains Mono"]
+            },
+            "fontSize": {
+                    "display-lg-mobile": ["40px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "code-sm": ["13px", {"lineHeight": "1.5", "letterSpacing": "0em", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "1.7", "letterSpacing": "0em", "fontWeight": "400"}],
+                    "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "700"}],
+                    "headline-md": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-sm": ["14px", {"lineHeight": "1.6", "letterSpacing": "0em", "fontWeight": "400"}],
+                    "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "500"}]
+            }
+          },
+        },
+      }
+    </script>
+</head>
+<body class="bg-background text-on-surface selection:bg-primary-container selection:text-white">
+<!-- TopNavBar (Shared Component Execution) -->
+<nav class="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-xl border-b border-surface-variant">
+<div class="flex justify-between items-center px-gutter py-4 w-full max-w-container-max mx-auto">
+<a class="font-code-sm text-code-sm font-bold text-primary tracking-tighter" href="#top">RONAV.DEV</a>
+<div class="hidden md:flex gap-8">
+<a class="font-label-caps text-label-caps text-primary flex flex-col items-center relative after:content-[''] after:absolute after:-bottom-2 after:w-1 after:h-1 after:bg-primary after:rounded-full cursor-pointer hover:text-primary transition-colors duration-300" href="#projects">PROJECTS</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant cursor-pointer hover:text-primary transition-colors duration-300" href="#experience">EXPERIENCE</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant cursor-pointer hover:text-primary transition-colors duration-300" href="#research">RESEARCH</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant cursor-pointer hover:text-primary transition-colors duration-300" href="#core_stack">CORE_STACK</a>
+</div>
+<a class="font-label-caps text-label-caps text-primary cursor-pointer active:opacity-70 px-4 py-2 border border-primary/20 rounded-sm hover:bg-primary/5 transition-all" href="mailto:rjaiswal@cs.cmu.edu">GET_IN_TOUCH</a>
+</div>
+</nav>
+<main class="relative">
+<!-- Hero Section -->
+<section class="min-h-screen relative flex items-center pt-20 overflow-hidden" id="top">
+<!-- STITCH_SHADER_START:ANIMATION_1 class="absolute inset-0 w-full h-full opacity-30 pointer-events-none" -->
+<div class="absolute inset-0 w-full h-full opacity-30 pointer-events-none" style="display:block;">
+<canvas id="shader-canvas-ANIMATION_1" style="display:block;width:100%;height:100%"></canvas>
+<script>
+(function() {
+  const canvas = document.getElementById('shader-canvas-ANIMATION_1');
+
+  // Sync the WebGL drawing-buffer size with the CSS-driven layout size.
+  // This fires on initial layout and whenever the element is resized.
+  function syncSize() {
+    const w = canvas.clientWidth  || 1280;
+    const h = canvas.clientHeight || 720;
+    if (canvas.width !== w || canvas.height !== h) {
+      canvas.width  = w;
+      canvas.height = h;
+    }
+  }
+  if (typeof ResizeObserver !== 'undefined') {
+    new ResizeObserver(syncSize).observe(canvas);
+  }
+  syncSize();
+
+  const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+  if (!gl) return;
+  const vs = `attribute vec2 a_position;
+varying vec2 v_texCoord;
+void main() {
+  v_texCoord = a_position * 0.5 + 0.5;
+  gl_Position = vec4(a_position, 0.0, 1.0);
+}`;
+  const fs = `precision highp float;
+uniform float u_time;
+uniform vec2 u_resolution;
+
+float noise(vec2 p) {
+    return fract(sin(dot(p, vec2(12.9898, 78.233))) * 43758.5453);
+}
+
+void main() {
+    vec2 uv = gl_FragCoord.xy / u_resolution.xy;
+    
+    // Deep Zinc Base
+    vec3 color = vec3(0.094, 0.094, 0.106); // #18181B
+    
+    // Subtle scanline effect
+    float scanline = sin(uv.y * u_resolution.y * 0.5) * 0.02;
+    color += scanline;
+    
+    // Very subtle noise/grain for cinematic feel
+    float n = noise(uv + u_time * 0.01) * 0.02;
+    color += n;
+    
+    // Subtle vignette
+    float vignette = 1.0 - smoothstep(0.5, 1.5, length(uv - 0.5));
+    color *= vignette;
+
+    gl_FragColor = vec4(color, 1.0);
+}`;
+  function cs(type, src) {
+    const s = gl.createShader(type);
+    gl.shaderSource(s, src);
+    gl.compileShader(s);
+    return s;
+  }
+  const prog = gl.createProgram();
+  gl.attachShader(prog, cs(gl.VERTEX_SHADER, vs));
+  gl.attachShader(prog, cs(gl.FRAGMENT_SHADER, fs));
+  gl.linkProgram(prog);
+  gl.useProgram(prog);
+  const buf = gl.createBuffer();
+  gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+  gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1, 1,-1, -1,1, 1,1]), gl.STATIC_DRAW);
+  const pos = gl.getAttribLocation(prog, 'a_position');
+  gl.enableVertexAttribArray(pos);
+  gl.vertexAttribPointer(pos, 2, gl.FLOAT, false, 0, 0);
+  const uTime = gl.getUniformLocation(prog, 'u_time');
+  const uRes = gl.getUniformLocation(prog, 'u_resolution');
+  const uMouse = gl.getUniformLocation(prog, 'u_mouse');
+
+  // u_mouse is in pixel coordinates matching u_resolution (ShaderToy convention).
+  // Shaders that need normalized coords should use: u_mouse / u_resolution.
+  let mouse = { x: canvas.width / 2, y: canvas.height / 2 };
+  window.addEventListener('mousemove', (event) => {
+    const rect = canvas.getBoundingClientRect();
+    if (rect.width && rect.height) {
+      const nx = (event.clientX - rect.left) / rect.width;
+      const ny = 1.0 - (event.clientY - rect.top) / rect.height;
+      mouse.x = nx * canvas.width;
+      mouse.y = ny * canvas.height;
+    }
+  });
+
+  function render(t) {
+    if (typeof ResizeObserver === 'undefined') syncSize();
+    gl.viewport(0, 0, canvas.width, canvas.height);
+    if (uTime) gl.uniform1f(uTime, t * 0.001);
+    if (uRes) gl.uniform2f(uRes, canvas.width, canvas.height);
+    if (uMouse) gl.uniform2f(uMouse, mouse.x, mouse.y);
+    gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+    requestAnimationFrame(render);
+  }
+  render(0);
+})();
+</script>
+</div>
+<!-- STITCH_SHADER_END:ANIMATION_1 -->
+<div class="max-w-container-max mx-auto px-gutter w-full grid grid-cols-1 md:grid-cols-12 gap-gutter items-center relative z-10">
+<!-- Left: Content (7 columns) -->
+<div class="md:col-span-7 flex flex-col items-start">
+<h1 class="font-display-lg text-[3.25rem] md:text-[3.4rem] lg:text-[4.75rem] xl:text-[5.25rem] mb-2 leading-none tracking-[-0.04em]">RONAV_JAISWAL</h1>
+<p class="font-headline-md text-headline-md text-primary-container mb-6">Software Engineer · AI Researcher</p>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-lg mb-10 border-l-2 border-surface-variant pl-6">
+                        Studying Computer Science and Artificial Intelligence at Carnegie Mellon.<br/>
+                        Building reliable software across ML systems, computer vision, and distributed infrastructure.
+                    </p>
+<div class="flex flex-wrap gap-4">
+<a class="bg-primary-container text-white px-8 py-4 font-label-caps text-label-caps rounded-sm hover:brightness-110 transition-all active:scale-95 shadow-[0_20px_40px_-12px_rgba(0,0,0,0.5)]" href="#projects">EXPLORE_PROJECTS</a>
+<a class="border border-surface-variant text-on-surface px-8 py-4 font-label-caps text-label-caps rounded-sm hover:bg-surface-variant transition-all" href="resume.pdf">VIEW_RESUME</a>
+</div>
+</div>
+<!-- Right: Terminal (5 columns / approx 45%) -->
+<div class="md:col-span-5 hidden md:block">
+<div class="bg-surface-container-low border border-surface-variant rounded-xl overflow-hidden shadow-2xl">
+<!-- Terminal Header -->
+<div class="flex items-center justify-between px-4 py-3 border-b border-surface-variant bg-surface-container-lowest">
+<div class="flex gap-1.5">
+<div class="w-2.5 h-2.5 rounded-full bg-error-container"></div>
+<div class="w-2.5 h-2.5 rounded-full bg-tertiary-container"></div>
+<div class="w-2.5 h-2.5 rounded-full bg-primary-container"></div>
+</div>
+<span class="font-code-sm text-[10px] text-on-surface-variant tracking-widest">RONAV_SHELL</span>
+</div>
+<!-- Terminal Content -->
+<div class="p-6 font-code-sm text-code-sm leading-relaxed text-on-surface-variant min-h-[300px]">
+<div class="mb-2"><span class="text-primary-container">λ</span> profile.init()</div>
+<div class="mb-2 text-surface-variant">// Loading current context...</div>
+<div class="mb-2"><span class="text-on-surface">school:</span> <span class="text-primary">Carnegie Mellon</span></div>
+<div class="mb-2"><span class="text-on-surface">focus:</span> ["Software", "AI", "Systems"]</div>
+<div class="mb-2 text-surface-variant">// Verifying shipped work</div>
+<div class="mb-2"><span class="text-on-surface">documents:</span> <span class="text-primary">10,000+</span></div>
+<div class="mb-2"><span class="text-on-surface">vision_accuracy:</span> <span class="text-primary">94%</span></div>
+<div class="mb-2"><span class="text-on-surface">status:</span> open_to_swe_internships</div>
+<div><span class="text-primary-container">λ</span> <span class="terminal-cursor"></span></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- About Section -->
+<section class="py-section-gap max-w-container-max mx-auto px-gutter stagger-reveal" id="system_logs">
+<h2 class="font-label-caps text-label-caps text-primary tracking-widest mb-12">01_IDENTIFICATION</h2>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-start">
+<div class="md:col-span-8">
+<p class="font-headline-md text-headline-md text-on-surface mb-8 leading-snug">
+                        I turn difficult engineering problems into systems that are fast, measurable, and dependable.
+                    </p>
+<p class="font-body-lg text-body-lg text-on-surface-variant">
+                        At CMU, I work across distributed systems, systems programming, computer vision, and machine learning. My experience spans industrial vision deployment, document intelligence, and research on memory and hierarchical cognitive control in world models.
+                    </p>
+</div>
+<div class="md:col-span-4 border-l border-surface-variant pl-8 py-2">
+<div class="flex flex-col gap-10">
+<div>
+<p class="font-label-caps text-[10px] text-on-surface-variant uppercase mb-1">Expected Graduation</p>
+<p class="font-display-lg text-headline-md text-primary">2027</p>
+</div>
+<div>
+<p class="font-label-caps text-[10px] text-on-surface-variant uppercase mb-1">Publications</p>
+<p class="font-display-lg text-headline-md text-primary">02</p>
+</div>
+<div>
+<p class="font-label-caps text-[10px] text-on-surface-variant uppercase mb-1">Core Languages</p>
+<p class="font-code-sm text-body-sm text-primary">Python, C++, C, Java, SQL, TypeScript</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Tech Stack Section -->
+<section class="py-section-gap border-y border-surface-variant overflow-hidden" id="core_stack">
+<div class="mb-12 px-gutter max-w-container-max mx-auto">
+<h2 class="font-label-caps text-label-caps text-primary tracking-widest">02_CORE_STACK</h2>
+</div>
+<div class="flex whitespace-nowrap overflow-x-auto gap-6 px-gutter pb-6 no-scrollbar">
+<!-- Badges -->
+<div class="flex gap-6 animate-marquee">
+<div class="px-6 py-3 border border-surface-variant rounded-full font-code-sm text-on-surface-variant hover:border-primary-container hover:text-primary transition-all cursor-default flex items-center gap-3 bg-surface-container-lowest">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span> PYTHON
+                    </div>
+<div class="px-6 py-3 border border-surface-variant rounded-full font-code-sm text-on-surface-variant hover:border-primary-container hover:text-primary transition-all cursor-default flex items-center gap-3 bg-surface-container-lowest">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span> C_PLUS_PLUS
+                    </div>
+<div class="px-6 py-3 border border-surface-variant rounded-full font-code-sm text-on-surface-variant hover:border-primary-container hover:text-primary transition-all cursor-default flex items-center gap-3 bg-surface-container-lowest">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span> PYTORCH
+                    </div>
+<div class="px-6 py-3 border border-surface-variant rounded-full font-code-sm text-on-surface-variant hover:border-primary-container hover:text-primary transition-all cursor-default flex items-center gap-3 bg-surface-container-lowest">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span> FASTAPI
+                    </div>
+<div class="px-6 py-3 border border-surface-variant rounded-full font-code-sm text-on-surface-variant hover:border-primary-container hover:text-primary transition-all cursor-default flex items-center gap-3 bg-surface-container-lowest">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span> DISTRIBUTED_SYSTEMS
+                    </div>
+<div class="px-6 py-3 border border-surface-variant rounded-full font-code-sm text-on-surface-variant hover:border-primary-container hover:text-primary transition-all cursor-default flex items-center gap-3 bg-surface-container-lowest">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span> DOCKER_KUBERNETES
+                    </div>
+<div class="px-6 py-3 border border-surface-variant rounded-full font-code-sm text-on-surface-variant hover:border-primary-container hover:text-primary transition-all cursor-default flex items-center gap-3 bg-surface-container-lowest">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span> AWS_POSTGRESQL
+                    </div>
+<div class="px-6 py-3 border border-surface-variant rounded-full font-code-sm text-on-surface-variant hover:border-primary-container hover:text-primary transition-all cursor-default flex items-center gap-3 bg-surface-container-lowest">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span> OPENCV_CUDA
+</div>
+<div class="px-6 py-3 border border-surface-variant rounded-full font-code-sm text-on-surface-variant hover:border-primary-container hover:text-primary transition-all cursor-default flex items-center gap-3 bg-surface-container-lowest">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span> LANGCHAIN_LANGGRAPH
+</div>
+</div>
+</div>
+</section>
+<!-- Projects Section -->
+<section class="py-section-gap max-w-container-max mx-auto px-gutter" id="projects">
+<h2 class="font-label-caps text-label-caps text-primary tracking-widest mb-16">03_PROJECT_VAULT</h2>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-y-24 md:gap-x-12">
+<!-- Card 1: 8 Columns -->
+<div class="md:col-span-8 stagger-reveal">
+<div class="group relative bg-surface-container border border-surface-variant rounded-xl p-stack-lg overflow-hidden transition-all duration-500 hover:border-primary/50">
+<div class="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-[120px]" data-icon="terminal">terminal</span>
+</div>
+<div class="relative z-10">
+<span class="font-code-sm text-[11px] text-primary mb-4 block">LLM_POST_TRAINING / DOCUMENT_AI</span>
+<h3 class="font-headline-md text-headline-md mb-4">VERIEXTRACT</h3>
+<p class="font-body-sm text-on-surface-variant max-w-xl mb-8">
+                                A document-to-JSON system that converts unstructured inputs into validated structured data. Fine-tuned Qwen with QLoRA and DPO to improve extraction reliability and schema adherence.
+                            </p>
+<div class="flex flex-wrap gap-2 mb-10">
+<span class="bg-surface-variant px-3 py-1 font-code-sm text-[11px] rounded text-on-surface">QWEN</span>
+<span class="bg-surface-variant px-3 py-1 font-code-sm text-[11px] rounded text-on-surface">QLORA</span>
+<span class="bg-surface-variant px-3 py-1 font-code-sm text-[11px] rounded text-on-surface">DPO</span>
+</div>
+<div class="flex gap-4">
+<a class="border border-surface-variant text-on-surface px-6 py-2 rounded-sm font-label-caps text-label-caps hover:bg-surface-variant transition-all" href="https://github.com/ronavjaiswal" target="_blank" rel="noreferrer">GITHUB_PROFILE</a>
+</div>
+</div>
+</div>
+</div>
+<!-- Spacer for asymmetry -->
+<div class="hidden md:block md:col-span-4"></div>
+<!-- Card 2: 7 Columns (Shifted Right) -->
+<div class="hidden md:block md:col-span-5"></div>
+<div class="md:col-span-7 stagger-reveal">
+<div class="group relative bg-surface-container border border-surface-variant rounded-xl p-stack-lg overflow-hidden transition-all duration-500 hover:border-primary/50">
+<div class="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-[120px]" data-icon="database">database</span>
+</div>
+<div class="relative z-10">
+<span class="font-code-sm text-[11px] text-primary mb-4 block">DISTRIBUTED_SYSTEMS / NETWORKING</span>
+<h3 class="font-headline-md text-headline-md mb-4">HASHGRID</h3>
+<p class="font-body-sm text-on-surface-variant max-w-xl mb-8">
+                                A fault-tolerant compute system with exactly-once, in-order messaging over lossy UDP. Uses sliding-window flow control, epochs, retries, heartbeats, and dynamic task reassignment after node failures.
+                            </p>
+<div class="flex flex-wrap gap-2 mb-10">
+<span class="bg-surface-variant px-3 py-1 font-code-sm text-[11px] rounded text-on-surface">GO</span>
+<span class="bg-surface-variant px-3 py-1 font-code-sm text-[11px] rounded text-on-surface">UDP</span>
+<span class="bg-surface-variant px-3 py-1 font-code-sm text-[11px] rounded text-on-surface">FAULT_TOLERANCE</span>
+</div>
+<div class="flex gap-4">
+<span class="font-code-sm text-[11px] text-on-surface-variant">EXACTLY_ONCE_DELIVERY · DYNAMIC_SCHEDULING</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Card 3: 10 Columns -->
+<div class="md:col-span-10 stagger-reveal">
+<div class="group relative bg-surface-container border border-surface-variant rounded-xl p-stack-lg overflow-hidden transition-all duration-500 hover:border-primary/50">
+<div class="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-[120px]" data-icon="security">security</span>
+</div>
+<div class="relative z-10">
+<span class="font-code-sm text-[11px] text-primary mb-4 block">SYSTEMS_PROGRAMMING / MEMORY</span>
+<h3 class="font-headline-md text-headline-md mb-4">HEAPFORGE</h3>
+<p class="font-body-sm text-on-surface-variant max-w-2xl mb-8">
+                                A custom dynamic memory allocator implementing malloc, free, realloc, and calloc. Achieved at least 74% memory utilization with segregated free lists, coalescing, and footer elimination.
+                            </p>
+<div class="flex flex-wrap gap-2 mb-10">
+<span class="bg-surface-variant px-3 py-1 font-code-sm text-[11px] rounded text-on-surface">C</span>
+<span class="bg-surface-variant px-3 py-1 font-code-sm text-[11px] rounded text-on-surface">MEMORY_MANAGEMENT</span>
+<span class="bg-surface-variant px-3 py-1 font-code-sm text-[11px] rounded text-on-surface">SEGREGATED_LISTS</span>
+</div>
+<div class="flex gap-4">
+<span class="font-code-sm text-[11px] text-on-surface-variant">74%+_MEMORY_UTILIZATION</span>
+</div>
+</div>
+</div>
+</div>
+<div class="hidden md:block md:col-span-2"></div>
+<div class="md:col-span-8 stagger-reveal">
+<div class="group relative bg-surface-container border border-surface-variant rounded-xl p-stack-lg overflow-hidden transition-all duration-500 hover:border-primary/50">
+<div class="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-[120px]">translate</span>
+</div>
+<div class="relative z-10">
+<span class="font-code-sm text-[11px] text-primary mb-4 block">DEEP_LEARNING / NLP</span>
+<h3 class="font-headline-md text-headline-md mb-4">POLYGLOT</h3>
+<p class="font-body-sm text-on-surface-variant max-w-xl mb-8">A neural machine translation system implementing the Transformer architecture from scratch: multi-head attention, masking, positional encoding, feed-forward layers, and autoregressive decoding.</p>
+<div class="flex flex-wrap gap-2 mb-10">
+<span class="bg-surface-variant px-3 py-1 font-code-sm text-[11px] rounded text-on-surface">PYTORCH</span>
+<span class="bg-surface-variant px-3 py-1 font-code-sm text-[11px] rounded text-on-surface">TRANSFORMERS</span>
+<span class="bg-surface-variant px-3 py-1 font-code-sm text-[11px] rounded text-on-surface">AUTOREGRESSIVE_DECODING</span>
+</div>
+<span class="font-code-sm text-[11px] text-on-surface-variant">END_TO_END_SEQUENCE_MODEL</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Experience Section -->
+<section class="py-section-gap border-y border-surface-variant" id="experience">
+<div class="max-w-container-max mx-auto px-gutter">
+<h2 class="font-label-caps text-label-caps text-primary tracking-widest mb-16">04_FIELD_EXPERIENCE</h2>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+<article class="md:col-span-7 bg-surface-container-low border border-surface-variant rounded-xl p-8 stagger-reveal">
+<div class="flex flex-col sm:flex-row sm:justify-between gap-2 mb-5"><div><p class="font-code-sm text-primary">WIPRO_PARI</p><h3 class="text-2xl font-bold mt-2">AI &amp; Robotics Intern · Software Controls</h3></div><p class="font-code-sm text-sm text-on-surface-variant">MAY—AUG 2026</p></div>
+<p class="font-body-sm text-on-surface-variant">Built an end-to-end industrial computer-vision platform across 10,000+ images, cutting vision deployment time by roughly 50%. Fine-tuned ViT/DINOv2 representations to reach 94% defect-detection accuracy and integrated AI inspection into PLC workflows for major automotive programs.</p>
+</article>
+<article class="md:col-span-5 bg-surface-container-low border border-surface-variant rounded-xl p-8 stagger-reveal">
+<div class="mb-5"><p class="font-code-sm text-primary">HERBOCHEM_INDUSTRIES</p><h3 class="text-2xl font-bold mt-2">Software Engineering &amp; AI Intern</h3><p class="font-code-sm text-sm text-on-surface-variant mt-2">JUN—AUG 2025</p></div>
+<p class="font-body-sm text-on-surface-variant">Created FastAPI ingestion and RAG pipelines over 10,000+ documents. Improved retrieval speed 4× and accuracy by 35% with domain-tuned embeddings, reranking, MMR, and vector search.</p>
+</article>
+<article class="md:col-span-9 md:col-start-3 bg-surface-container-low border border-surface-variant rounded-xl p-8 stagger-reveal">
+<div class="flex flex-col sm:flex-row sm:justify-between gap-2 mb-5"><div><p class="font-code-sm text-primary">LEE_LAB_AT_CMU</p><h3 class="text-2xl font-bold mt-2">Undergraduate Research Fellow</h3></div><p class="font-code-sm text-sm text-on-surface-variant">FEB 2025—PRESENT</p></div>
+<p class="font-body-sm text-on-surface-variant">Researching memory and hierarchical cognitive control in world models with Professor Tai Sing Lee. Developing active-perception systems where vision-language models reason over sequential foveated observations and uncertainty guides fixation timing and location.</p>
+</article>
+</div>
+</div>
+</section>
+<!-- Research Section -->
+<section class="py-section-gap max-w-container-max mx-auto px-gutter" id="research">
+<h2 class="font-label-caps text-label-caps text-primary tracking-widest mb-16">05_RESEARCH_AND_AWARDS</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<a class="group border border-surface-variant rounded-xl p-8 bg-surface-container-low hover:border-primary/60 transition-colors stagger-reveal" href="https://doi.org/10.56726/IRJMETS45537" target="_blank" rel="noreferrer">
+<p class="font-code-sm text-xs text-primary mb-4">PUBLICATION · 2023 · IRJMETS</p>
+<h3 class="text-2xl font-bold mb-4 group-hover:text-primary transition-colors">Stylize–Cluster–Classify for Multidimensional Image Classification</h3>
+<p class="font-body-sm text-on-surface-variant">Introduced a computer-vision pipeline combining stylization, clustering, feature engineering, and dimensionality reduction; reported 85.55% accuracy across 25 object classes.</p>
+</a>
+<a class="group border border-surface-variant rounded-xl p-8 bg-surface-container-low hover:border-primary/60 transition-colors stagger-reveal" href="https://doi.org/10.36948/ijfmr.2023.v05i04.5933" target="_blank" rel="noreferrer">
+<p class="font-code-sm text-xs text-primary mb-4">PUBLICATION · 2023 · IJFMR</p>
+<h3 class="text-2xl font-bold mb-4 group-hover:text-primary transition-colors">Lakshya: Assistive AI for People with Visual Impairments</h3>
+<p class="font-body-sm text-on-surface-variant">Designed an affordable Raspberry Pi–based wearable that uses real-time object recognition, voice guidance, and haptic feedback to help users identify and reach nearby objects.</p>
+</a>
+<a class="group border border-surface-variant rounded-xl p-8 bg-surface-container-low hover:border-primary/60 transition-colors stagger-reveal md:col-span-2" href="https://github.com/ronavjaiswal/TartanHacks" target="_blank" rel="noreferrer">
+<p class="font-code-sm text-xs text-primary mb-4">AWARD · TARTANHACKS 2026 · 2ND OVERALL</p>
+<h3 class="text-2xl font-bold mb-4 group-hover:text-primary transition-colors">VitalVocals — Real-Time Multimodal Vocal Health</h3>
+<p class="font-body-sm text-on-surface-variant max-w-3xl">Built a multimodal system combining MediaPipe pose estimation with Librosa/WebRTC audio analysis to identify breath timing, vocal strain, and instability during live performance. Awarded second place at CMU’s largest hackathon.</p>
+</a>
+</div>
+</section>
+<!-- Contact Section -->
+<section class="py-section-gap max-w-container-max mx-auto px-gutter" id="repository">
+<h2 class="font-label-caps text-label-caps text-primary tracking-widest mb-12">06_CONNECT_SYSTEM</h2>
+<div class="flex flex-col items-start">
+<p class="font-label-caps text-label-caps text-on-surface-variant mb-6">GET_IN_TOUCH</p>
+<a class="font-display-lg text-[2.4rem] md:text-[4.5rem] text-primary-container hover:text-primary transition-colors break-all" href="mailto:rjaiswal@cs.cmu.edu">
+                    RJAISWAL@CS.CMU.EDU
+                </a>
+<div class="flex gap-8 mt-16">
+<a class="font-label-caps text-label-caps text-on-surface hover:text-primary transition-colors flex items-center gap-2" href="https://github.com/ronavjaiswal" target="_blank" rel="noreferrer">
+<span class="material-symbols-outlined text-sm" data-icon="link">link</span> GITHUB
+                    </a>
+<a class="font-label-caps text-label-caps text-on-surface hover:text-primary transition-colors flex items-center gap-2" href="https://www.linkedin.com/in/ronavjaiswal" target="_blank" rel="noreferrer">
+<span class="material-symbols-outlined text-sm" data-icon="work">work</span> LINKEDIN
+                    </a>
+<a class="font-label-caps text-label-caps text-on-surface hover:text-primary transition-colors flex items-center gap-2" href="resume.pdf">
+<span class="material-symbols-outlined text-sm">description</span> RESUME
+                    </a>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer (Shared Component Execution) -->
+<footer class="w-full py-stack-md border-t border-surface-variant bg-background">
+<div class="flex flex-col md:flex-row justify-between items-center px-gutter w-full max-w-container-max mx-auto gap-4">
+<div class="font-code-sm text-code-sm text-on-surface">© 2026 RONAV_JAISWAL. BUILT_WITH_INTENT.</div>
+<div class="flex gap-8">
+<a class="font-code-sm text-code-sm text-on-surface-variant hover:text-primary transition-colors" href="https://github.com/ronavjaiswal">GITHUB</a>
+<a class="font-code-sm text-code-sm text-on-surface-variant hover:text-primary transition-colors" href="https://www.linkedin.com/in/ronavjaiswal">LINKEDIN</a>
+<a class="font-code-sm text-code-sm text-on-surface-variant hover:text-primary transition-colors" href="https://github.com/Zykrave/devfolio-templates">TEMPLATE</a>
+</div>
+</div>
+</footer>
+<script>
+        // Simple Intersection Observer for scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.stagger-reveal').forEach(el => observer.observe(el));
+
+        // Terminal animation logic
+        const terminalText = [
+            "profile.init()",
+            "// Loading current context...",
+            "school: Carnegie Mellon",
+            "focus: [\"Software\", \"AI\", \"Systems\"]",
+            "// Verifying shipped work",
+            "documents: 10,000+",
+            "vision_accuracy: 94%",
+            "status: open_to_swe_internships"
+        ];
+        
+        // This is a simplified visual representation, the static HTML has the initial state.
+        // We could add a typing effect here if desired.
+    </script>
+</body></html>
