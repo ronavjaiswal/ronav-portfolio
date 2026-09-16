@@ -300,7 +300,6 @@ void main() {
                     </p>
 <div class="flex flex-wrap gap-4">
 <a class="bg-primary-container text-white px-8 py-4 font-label-caps text-label-caps rounded-sm hover:brightness-110 transition-all active:scale-95 shadow-[0_20px_40px_-12px_rgba(0,0,0,0.5)]" href="#projects">EXPLORE_PROJECTS</a>
-<a class="border border-surface-variant text-on-surface px-8 py-4 font-label-caps text-label-caps rounded-sm hover:bg-surface-variant transition-all" href="resume.pdf">VIEW_RESUME</a>
 </div>
 </div>
 <!-- Right: Terminal (5 columns / approx 45%) -->
@@ -402,98 +401,35 @@ void main() {
 <!-- Projects Section -->
 <section class="py-section-gap max-w-container-max mx-auto px-gutter" id="projects">
 <h2 class="font-label-caps text-label-caps text-primary tracking-widest mb-16">03_PROJECT_VAULT</h2>
-<div class="grid grid-cols-1 md:grid-cols-12 gap-y-24 md:gap-x-12">
-<!-- Card 1: 8 Columns -->
-<div class="md:col-span-8 stagger-reveal">
-<div class="group relative bg-surface-container border border-surface-variant rounded-xl p-stack-lg overflow-hidden transition-all duration-500 hover:border-primary/50">
-<div class="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity">
-<span class="material-symbols-outlined text-[120px]" data-icon="terminal">terminal</span>
-</div>
-<div class="relative z-10">
-<span class="font-code-sm text-[11px] text-primary mb-4 block">LLM_POST_TRAINING / DOCUMENT_AI</span>
-<h3 class="font-headline-md text-headline-md mb-4">VERIEXTRACT</h3>
-<p class="font-body-sm text-on-surface-variant max-w-xl mb-8">
-                                A document-to-JSON system that converts unstructured inputs into validated structured data. Fine-tuned Qwen with QLoRA and DPO to improve extraction reliability and schema adherence.
-                            </p>
-<div class="flex flex-wrap gap-2 mb-10">
-<span class="bg-surface-variant px-3 py-1 font-code-sm text-[11px] rounded text-on-surface">QWEN</span>
-<span class="bg-surface-variant px-3 py-1 font-code-sm text-[11px] rounded text-on-surface">QLORA</span>
-<span class="bg-surface-variant px-3 py-1 font-code-sm text-[11px] rounded text-on-surface">DPO</span>
-</div>
-<div class="flex gap-4">
-<a class="border border-surface-variant text-on-surface px-6 py-2 rounded-sm font-label-caps text-label-caps hover:bg-surface-variant transition-all" href="https://github.com/ronavjaiswal" target="_blank" rel="noreferrer">GITHUB_PROFILE</a>
-</div>
-</div>
-</div>
-</div>
-<!-- Spacer for asymmetry -->
-<div class="hidden md:block md:col-span-4"></div>
-<!-- Card 2: 7 Columns (Shifted Right) -->
-<div class="hidden md:block md:col-span-5"></div>
-<div class="md:col-span-7 stagger-reveal">
-<div class="group relative bg-surface-container border border-surface-variant rounded-xl p-stack-lg overflow-hidden transition-all duration-500 hover:border-primary/50">
-<div class="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity">
-<span class="material-symbols-outlined text-[120px]" data-icon="database">database</span>
-</div>
-<div class="relative z-10">
-<span class="font-code-sm text-[11px] text-primary mb-4 block">DISTRIBUTED_SYSTEMS / NETWORKING</span>
-<h3 class="font-headline-md text-headline-md mb-4">HASHGRID</h3>
-<p class="font-body-sm text-on-surface-variant max-w-xl mb-8">
-                                A fault-tolerant compute system with exactly-once, in-order messaging over lossy UDP. Uses sliding-window flow control, epochs, retries, heartbeats, and dynamic task reassignment after node failures.
-                            </p>
-<div class="flex flex-wrap gap-2 mb-10">
-<span class="bg-surface-variant px-3 py-1 font-code-sm text-[11px] rounded text-on-surface">GO</span>
-<span class="bg-surface-variant px-3 py-1 font-code-sm text-[11px] rounded text-on-surface">UDP</span>
-<span class="bg-surface-variant px-3 py-1 font-code-sm text-[11px] rounded text-on-surface">FAULT_TOLERANCE</span>
-</div>
-<div class="flex gap-4">
-<span class="font-code-sm text-[11px] text-on-surface-variant">EXACTLY_ONCE_DELIVERY · DYNAMIC_SCHEDULING</span>
-</div>
-</div>
-</div>
-</div>
-<!-- Card 3: 10 Columns -->
-<div class="md:col-span-10 stagger-reveal">
-<div class="group relative bg-surface-container border border-surface-variant rounded-xl p-stack-lg overflow-hidden transition-all duration-500 hover:border-primary/50">
-<div class="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity">
-<span class="material-symbols-outlined text-[120px]" data-icon="security">security</span>
-</div>
-<div class="relative z-10">
-<span class="font-code-sm text-[11px] text-primary mb-4 block">SYSTEMS_PROGRAMMING / MEMORY</span>
-<h3 class="font-headline-md text-headline-md mb-4">HEAPFORGE</h3>
-<p class="font-body-sm text-on-surface-variant max-w-2xl mb-8">
-                                A custom dynamic memory allocator implementing malloc, free, realloc, and calloc. Achieved at least 74% memory utilization with segregated free lists, coalescing, and footer elimination.
-                            </p>
-<div class="flex flex-wrap gap-2 mb-10">
-<span class="bg-surface-variant px-3 py-1 font-code-sm text-[11px] rounded text-on-surface">C</span>
-<span class="bg-surface-variant px-3 py-1 font-code-sm text-[11px] rounded text-on-surface">MEMORY_MANAGEMENT</span>
-<span class="bg-surface-variant px-3 py-1 font-code-sm text-[11px] rounded text-on-surface">SEGREGATED_LISTS</span>
-</div>
-<div class="flex gap-4">
-<span class="font-code-sm text-[11px] text-on-surface-variant">74%+_MEMORY_UTILIZATION</span>
-</div>
-</div>
-</div>
-</div>
-<div class="hidden md:block md:col-span-2"></div>
-<div class="md:col-span-8 stagger-reveal">
-<div class="group relative bg-surface-container border border-surface-variant rounded-xl p-stack-lg overflow-hidden transition-all duration-500 hover:border-primary/50">
-<div class="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity">
-<span class="material-symbols-outlined text-[120px]">translate</span>
-</div>
-<div class="relative z-10">
-<span class="font-code-sm text-[11px] text-primary mb-4 block">DEEP_LEARNING / NLP</span>
-<h3 class="font-headline-md text-headline-md mb-4">POLYGLOT</h3>
-<p class="font-body-sm text-on-surface-variant max-w-xl mb-8">A neural machine translation system implementing the Transformer architecture from scratch: multi-head attention, masking, positional encoding, feed-forward layers, and autoregressive decoding.</p>
-<div class="flex flex-wrap gap-2 mb-10">
-<span class="bg-surface-variant px-3 py-1 font-code-sm text-[11px] rounded text-on-surface">PYTORCH</span>
-<span class="bg-surface-variant px-3 py-1 font-code-sm text-[11px] rounded text-on-surface">TRANSFORMERS</span>
-<span class="bg-surface-variant px-3 py-1 font-code-sm text-[11px] rounded text-on-surface">AUTOREGRESSIVE_DECODING</span>
-</div>
-<span class="font-code-sm text-[11px] text-on-surface-variant">END_TO_END_SEQUENCE_MODEL</span>
-</div>
-</div>
-</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<article class="group relative min-h-[340px] bg-surface-container border border-surface-variant rounded-xl p-8 overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:border-primary/60 stagger-reveal">
+<span class="absolute top-7 right-7 material-symbols-outlined text-[72px] text-surface-variant group-hover:text-primary-container/30 transition-colors">terminal</span>
+<div class="relative z-10 h-full flex flex-col">
+<p class="font-code-sm text-xs text-primary mb-5">01 · DOCUMENT_AI</p><h3 class="text-3xl font-bold mb-4">VERIEXTRACT</h3>
+<p class="text-base leading-7 text-on-surface-variant mb-8 max-w-md">Converts unstructured documents into validated JSON, using QLoRA and DPO fine-tuning to improve Qwen’s extraction reliability and schema adherence.</p>
+<div class="flex flex-wrap gap-2 mt-auto"><span class="bg-surface-variant px-3 py-1.5 font-code-sm text-xs rounded">QWEN</span><span class="bg-surface-variant px-3 py-1.5 font-code-sm text-xs rounded">QLORA</span><span class="bg-surface-variant px-3 py-1.5 font-code-sm text-xs rounded">DPO</span></div>
+</div></article>
+<article class="group relative min-h-[340px] bg-surface-container border border-surface-variant rounded-xl p-8 overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:border-primary/60 stagger-reveal">
+<span class="absolute top-7 right-7 material-symbols-outlined text-[72px] text-surface-variant group-hover:text-primary-container/30 transition-colors">hub</span>
+<div class="relative z-10 h-full flex flex-col">
+<p class="font-code-sm text-xs text-primary mb-5">02 · DISTRIBUTED_SYSTEMS</p><h3 class="text-3xl font-bold mb-4">HASHGRID</h3>
+<p class="text-base leading-7 text-on-surface-variant mb-8 max-w-md">Fault-tolerant compute over lossy UDP with exactly-once, in-order delivery, sliding-window flow control, epochs, retries, heartbeats, and automatic task reassignment.</p>
+<div class="flex flex-wrap gap-2 mt-auto"><span class="bg-surface-variant px-3 py-1.5 font-code-sm text-xs rounded">GO</span><span class="bg-surface-variant px-3 py-1.5 font-code-sm text-xs rounded">UDP</span><span class="bg-surface-variant px-3 py-1.5 font-code-sm text-xs rounded">FAULT_TOLERANCE</span></div>
+</div></article>
+<article class="group relative min-h-[340px] bg-surface-container border border-surface-variant rounded-xl p-8 overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:border-primary/60 stagger-reveal">
+<span class="absolute top-7 right-7 material-symbols-outlined text-[72px] text-surface-variant group-hover:text-primary-container/30 transition-colors">memory</span>
+<div class="relative z-10 h-full flex flex-col">
+<p class="font-code-sm text-xs text-primary mb-5">03 · SYSTEMS_PROGRAMMING</p><h3 class="text-3xl font-bold mb-4">HEAPFORGE</h3>
+<p class="text-base leading-7 text-on-surface-variant mb-8 max-w-md">Custom implementation of malloc, free, realloc, and calloc with segregated free lists, coalescing, and footer elimination, reaching at least 74% memory utilization.</p>
+<div class="flex flex-wrap gap-2 mt-auto"><span class="bg-surface-variant px-3 py-1.5 font-code-sm text-xs rounded">C</span><span class="bg-surface-variant px-3 py-1.5 font-code-sm text-xs rounded">ALLOCATORS</span><span class="bg-surface-variant px-3 py-1.5 font-code-sm text-xs rounded">74%+ UTILIZATION</span></div>
+</div></article>
+<article class="group relative min-h-[340px] bg-surface-container border border-surface-variant rounded-xl p-8 overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:border-primary/60 stagger-reveal">
+<span class="absolute top-7 right-7 material-symbols-outlined text-[72px] text-surface-variant group-hover:text-primary-container/30 transition-colors">translate</span>
+<div class="relative z-10 h-full flex flex-col">
+<p class="font-code-sm text-xs text-primary mb-5">04 · DEEP_LEARNING</p><h3 class="text-3xl font-bold mb-4">POLYGLOT</h3>
+<p class="text-base leading-7 text-on-surface-variant mb-8 max-w-md">Neural machine translation built from scratch with multi-head attention, masking, positional encoding, feed-forward layers, and autoregressive decoding.</p>
+<div class="flex flex-wrap gap-2 mt-auto"><span class="bg-surface-variant px-3 py-1.5 font-code-sm text-xs rounded">PYTORCH</span><span class="bg-surface-variant px-3 py-1.5 font-code-sm text-xs rounded">TRANSFORMERS</span><span class="bg-surface-variant px-3 py-1.5 font-code-sm text-xs rounded">NLP</span></div>
+</div></article>
 </div>
 </section>
 <!-- Experience Section -->
@@ -511,7 +447,15 @@ void main() {
 </article>
 <article class="md:col-span-9 md:col-start-3 bg-surface-container-low border border-surface-variant rounded-xl p-8 stagger-reveal">
 <div class="flex flex-col sm:flex-row sm:justify-between gap-2 mb-5"><div><p class="font-code-sm text-primary">LEE_LAB_AT_CMU</p><h3 class="text-2xl font-bold mt-2">Undergraduate Research Fellow</h3></div><p class="font-code-sm text-sm text-on-surface-variant">FEB 2025—PRESENT</p></div>
-<p class="font-body-sm text-on-surface-variant">Researching memory and hierarchical cognitive control in world models with Professor Tai Sing Lee. Developing active-perception systems where vision-language models reason over sequential foveated observations and uncertainty guides fixation timing and location.</p>
+<p class="font-body-sm text-on-surface-variant">Researching biologically inspired active vision with Professor Tai Sing Lee. Building PyTorch foveated-vision pipelines with DeepGaze IIe and an active-perception system where Qwen-VLM integrates sequential glimpses and predicts where to look next.</p>
+</article>
+<article class="md:col-span-5 bg-surface-container-low border border-surface-variant rounded-xl p-8 stagger-reveal">
+<div class="mb-5"><p class="font-code-sm text-primary">COEP_TECHNOLOGICAL_UNIVERSITY</p><h3 class="text-2xl font-bold mt-2">Research Intern · Aerial Technologies</h3><p class="font-code-sm text-sm text-on-surface-variant mt-2">SEP 2023—APR 2024</p></div>
+<p class="font-body-sm text-on-surface-variant">Researched autonomous drone controls under Professor Shantipal Ohol in Robotics Engineering, working across aerial systems, mobile robotics, and control software.</p>
+</article>
+<article class="md:col-span-7 bg-surface-container-low border border-surface-variant rounded-xl p-8 stagger-reveal">
+<div class="flex flex-col sm:flex-row sm:justify-between gap-2 mb-5"><div><p class="font-code-sm text-primary">BISHOP'S_SCHOOL_ROBOTICS_CLUB</p><h3 class="text-2xl font-bold mt-2">FTC Team Captain · Hardware Lead · Robot Driver</h3></div><p class="font-code-sm text-sm text-on-surface-variant">OCT 2017—APR 2024</p></div>
+<p class="font-body-sm text-on-surface-variant">Co-founded and led BSRC Mad About Robots, helping the program reach 10,000+ students and support 20+ FTC teams. Won the FIRST Dean’s List Finalist Award and represented India at the 2022 FIRST World Championship in Houston.</p>
 </article>
 </div>
 </div>
@@ -551,9 +495,6 @@ void main() {
                     </a>
 <a class="font-label-caps text-label-caps text-on-surface hover:text-primary transition-colors flex items-center gap-2" href="https://www.linkedin.com/in/ronavjaiswal" target="_blank" rel="noreferrer">
 <span class="material-symbols-outlined text-sm" data-icon="work">work</span> LINKEDIN
-                    </a>
-<a class="font-label-caps text-label-caps text-on-surface hover:text-primary transition-colors flex items-center gap-2" href="resume.pdf">
-<span class="material-symbols-outlined text-sm">description</span> RESUME
                     </a>
 </div>
 </div>
